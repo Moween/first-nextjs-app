@@ -1,8 +1,12 @@
-
+import MainLayout from "../src/components/layout"
 
 function MyApp({ Component, pageProps }) {
   return (
-      <Component {...pageProps} />
+    <>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </>
   );
 }
 
