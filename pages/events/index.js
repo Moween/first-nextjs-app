@@ -1,7 +1,14 @@
-import CatEvent from "../../src/components/events/CatEvent";
+import AllEvents from '../../src/components/events/event-page';
 
-const EventsCatPage = ({ data, pageName }) => (
-    <div>Cat event</div>
-);
+const EventsPage = ({ data }) => <AllEvents data={data} />;
 
-export default EventsCatPage;
+export default EventsPage;
+
+export async function getStaticProps() {
+  const { events_categories } = await import('../../data/data.json');
+  return {
+    props: {
+      data: events_categories,
+    },
+  };
+}
